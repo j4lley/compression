@@ -264,7 +264,7 @@ def decompress():
 
   # Remove batch dimension, and crop away any extraneous padding on the bottom
   # or right boundaries.
-  x_hat = x_hat[0, :x_shape[0], :x_shape[1], :]
+  x_hat = x_hat[0, :int(x_shape[0]), :int(x_shape[1]), :]
 
   # Write reconstructed image out as a PNG file.
   op = save_image(args.output, x_hat)
